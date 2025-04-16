@@ -1,5 +1,6 @@
 const token = "meu_token";
-const ws = new WebSocket(`ws://localhost:8000/ws/video?token=${token}`);
+const channel = 1;
+const ws = new WebSocket(`ws://localhost:8000/ws/video/${channel}?token=${token}`);
 const canvas = document.getElementById("video");
 const ctx = canvas.getContext("2d");
 
