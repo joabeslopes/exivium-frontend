@@ -1,8 +1,8 @@
 const token = 'meu_token';
 const channel = 1;
 const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
-const host = window.location.host;
-const port = '8000';
+const host = window.location.host === '' ? 'localhost' : window.location.host;
+const port = window.location.host === '' ? '8000' : '80';
 const ws = new WebSocket(`${protocol}${host}:${port}/ws/video/${channel}?token=${token}`);
 const canvas = document.getElementById("video");
 const ctx = canvas.getContext("2d");
